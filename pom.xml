@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.demo</groupId>
+    <artifactId>ECIDDemo</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>ECIDDemo</name>
+
+    <properties>
+        <javaee-endorsed-api-version>7.0</javaee-endorsed-api-version>
+        <javaee-api-version>7.0</javaee-api-version>
+        <javax.ws.rs-api-version>2.1</javax.ws.rs-api-version>
+        <log4j-core-version>2.12.1</log4j-core-version>
+        <log4j-api-version>2.12.1</log4j-api-version>
+        <maven-surefire-plugin-version>2.19.1</maven-surefire-plugin-version>
+        <wls-api-version>1.0.0-130217.1315</wls-api-version>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
+	
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-endorsed-api</artifactId>
+            <version>${javaee-endorsed-api-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javaee-api-version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>${javax.ws.rs-api-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.wls</groupId>
+            <artifactId>wls-api</artifactId>
+            <version>${wls-api-version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>ECIDDemo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin-version}</version>
+                <configuration>
+                    <failIfNoTests>false</failIfNoTests>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin-version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build> 
+
+
+    <repositories>
+        <repository>
+            <id>repo</id>
+            <url><insert-url></url>
+        </repository>
+    </repositories>
+
+</project>
